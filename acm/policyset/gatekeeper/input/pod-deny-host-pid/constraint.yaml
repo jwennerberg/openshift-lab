@@ -1,0 +1,20 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: PodDenyHostPid
+metadata:
+  name: poddenyhostpid
+spec:
+  match:
+    kinds:
+    - apiGroups:
+      - ""
+      kinds:
+      - Pod
+    - apiGroups:
+      - apps
+      kinds:
+      - DaemonSet
+      - Deployment
+      - StatefulSet
+    namespaceSelector:
+      matchLabels:
+        container-platform-managed: "true"

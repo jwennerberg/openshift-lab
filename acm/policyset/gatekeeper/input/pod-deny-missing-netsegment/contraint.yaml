@@ -1,0 +1,17 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: pod-must-have-netsegment
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    namespaceSelector:
+      matchLabels:
+        container-platform-managed: "true"
+  parameters:
+    message: "All Pods must have a valid 'netsegment' label"
+    labels:
+      - key: netsegment
+        allowedRegex: "^(frontend|backend|infra)$"
