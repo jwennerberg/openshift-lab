@@ -1,0 +1,10 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  annotations:
+    apps.open-cluster-management.io/reconcile-rate: medium
+  name: openshift-lab-acm-policy
+  namespace: policies
+spec:
+  pathname: https://github.com/jwennerberg/openshift-lab.git
+  type: Git
