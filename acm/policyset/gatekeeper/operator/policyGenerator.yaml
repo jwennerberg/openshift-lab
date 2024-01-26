@@ -1,0 +1,38 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: base-platform-operators-policyset
+placementBindingDefaults:
+  name: base-platform-operators-policyset
+policyDefaults:
+  consolidateManifests: true
+  policyAnnotations: {"policy.open-cluster-management.io/disable-templates": "true"}
+  categories:
+    - CM Configuration Management
+  controls:
+    - CM-2 Baseline Configuration
+  namespace: policies
+  remediationAction: enforce
+  severity: medium
+  policySets:
+    - base-platform-operators-policyset
+  standards:
+    - Container-platform-standard-v1
+  namespaceSelector:
+    exclude:
+      - kube-*
+policies:
+- name: gatekeeper-operator
+  categories:
+    - base-container-platform
+  controls:
+    - base-container-platform
+  disabled: false
+  manifests:
+    - path: input/gatekeeper-operator
+policySets:
+  - description: A set of policies for controlling the Container Platform base operators
+    name: base-platform-operators-policyset
+    placement:
+      placementPath: input/placement.yaml
+
