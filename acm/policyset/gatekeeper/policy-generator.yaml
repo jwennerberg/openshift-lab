@@ -27,33 +27,33 @@ policyDefaults:
 policies:
 - name: pod-deny-missing-netsegment
   categories:
-    - setup
+    - workload
   controls:
-    - setup
+    - pod-container-security
   disabled: false
   manifests:
     - path: input/pod-deny-missing-netsegment
 - name: container-deny-latest-tag
   categories:
-    - setup
+    - workload
   controls:
-    - setup
+    - pod-container-security
   disabled: false
   manifests:
     - path: input/container-deny-latest-tag
 - name: container-deny-privileged-if-tenant
   categories:
-    - setup
+    - workload
   controls:
-    - setup
+    - pod-container-security
   disabled: false
   manifests:
     - path: input/container-deny-privileged-if-tenant
 - name: pod-deny-host-pid
   categories:
-    - setup
+    - workload
   controls:
-    - setup
+    - pod-container-security
   disabled: false
   manifests:
     - path: input/pod-deny-host-pid
