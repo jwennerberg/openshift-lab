@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
+  - managedclusterset.yaml
   - managedclustersetbinding.yaml
   - clusterrolebinding.yaml
   - channel.yaml

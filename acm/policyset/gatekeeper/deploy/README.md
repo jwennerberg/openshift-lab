@@ -4,6 +4,7 @@
 
 * ClusterSet named `container-platform`
 
+
 ## Deployment
 
 Dry-run:
@@ -15,3 +16,16 @@ Apply:
 ```
 oc apply --kustomize deploy/
 ```
+
+
+Add local-cluster to ClusterSet, add label:
+
+```
+oc label managedcluster/local-cluster cluster.open-cluster-management.io/clusterset=container-platform --overwrite
+oc label managedcluster/local-cluster container-platform-managed=true
+```
+
+
+### Gatekeeper instance
+
+
