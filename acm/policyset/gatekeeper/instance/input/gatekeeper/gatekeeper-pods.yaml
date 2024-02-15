@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: openshift-gatekeeper-system
+  labels:
+    control-plane: audit-controller
+status:
+  phase: Running
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: openshift-gatekeeper-system
+  labels:
+    control-plane: controller-manager
+status:
+  phase: Running

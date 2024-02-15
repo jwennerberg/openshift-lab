@@ -1,0 +1,38 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: base-platform-config-policyset
+placementBindingDefaults:
+  name: base-platform-config-policyset
+policyDefaults:
+  consolidateManifests: true
+  policyAnnotations: {"policy.open-cluster-management.io/disable-templates": "true"}
+  categories:
+    - CM Configuration Management
+  controls:
+    - CM-2 Baseline Configuration
+  namespace: policies
+  remediationAction: enforce
+  severity: medium
+  policySets:
+    - base-platform-config-policyset
+  standards:
+    - Container-platform-standard-v1
+  namespaceSelector:
+    exclude:
+      - kube-*
+policies:
+- name: gatekeeper-instance
+  categories:
+    - base-container-platform
+  controls:
+    - base-container-platform
+  disabled: false
+  manifests:
+    - path: input/gatekeeper
+policySets:
+  - description: A set of policies for controlling the Container Platform base config
+    name: base-platform-config-policyset
+    placement:
+      placementPath: input/placement.yaml
+

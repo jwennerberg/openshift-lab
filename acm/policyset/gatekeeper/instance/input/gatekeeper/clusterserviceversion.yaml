@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  namespace: openshift-gatekeeper-system
+spec:
+  displayName: Gatekeeper Operator
+status:
+  phase: Succeeded
