@@ -3,6 +3,7 @@ kind: ContainerDenyLatestTag
 metadata:
   name: containerdenylatesttag
 spec:
+  enforcementAction: warn
   match:
     kinds:
     - apiGroups:

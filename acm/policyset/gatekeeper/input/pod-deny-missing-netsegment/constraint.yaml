@@ -3,6 +3,7 @@ kind: K8sRequiredLabels
 metadata:
   name: pod-must-have-netsegment
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]
