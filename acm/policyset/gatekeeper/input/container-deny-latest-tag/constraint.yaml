@@ -15,3 +15,6 @@ spec:
       - DaemonSet
       - Deployment
       - StatefulSet
+    namespaceSelector:
+      matchLabels:
+        container-platform-managed: "true"
