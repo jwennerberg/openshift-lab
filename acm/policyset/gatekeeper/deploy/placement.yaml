@@ -10,7 +10,7 @@ spec:
     - requiredClusterSelector:
         labelSelector:
           matchExpressions:
-            - key: 'container-platform-managed'
+            - key: 'container-platform-managed-hub'
               operator: 'In'
               values:
                 - 'true'
