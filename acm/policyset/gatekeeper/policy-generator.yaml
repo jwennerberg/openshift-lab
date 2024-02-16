@@ -29,7 +29,7 @@ policies:
   categories:
     - workload
   controls:
-    - pod-container-security
+    - network-security
   disabled: false
   manifests:
     - path: input/pod-deny-missing-netsegment
