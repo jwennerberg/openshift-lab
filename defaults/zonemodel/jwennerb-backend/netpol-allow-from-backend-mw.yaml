@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-from-backend-mw
+spec:
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchExpressions:
+            - key: deployment-zone
+              operator: In
+              values:
+                - jwennerb
+            - key: security-zone
+              operator: In
+              values:
+                - backend
+                - middleware
+  policyTypes:
+  - Ingress

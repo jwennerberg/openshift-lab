@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: jwennerb-backend
+resources:
+  - ../base
+  - netpol-allow-from-backend-mw.yaml
+
+patches:
+  - patch: |-
+      - op: add
+        path: /metadata/labels/security-zone
+        value: backend
+    target:
+      kind: Namespace
